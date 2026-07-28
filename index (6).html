@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="Sasfino_Fav.png" />
+<title>Sasfino Farm Limited — From Root to Route</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="home">
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="logo">
+      <img src="sasfino_logo.png" alt="Sasfino Farm Limited" class="logo-img">
+    </div>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="manufacturing.html">Manufacturing</a>
+      <a href="sustainability.html">Sustainability</a> 
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary">Request Quote</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+</header>
+
+<!--<section class="slideshow" aria-label="Sasfino Farm photo slideshow">
+  <div class="slide active" style="background-image:url('slide-pallets.jpg')">
+    <div class="slide-caption"><span>We produce the best pallets.</span></div>
+  </div>
+  <div class="slide" style="background-image:url('slide-reforestation.jpg')">
+    <div class="slide-caption"><span>Every pallet is made from homegrown trees.</span></div>
+  </div>
+  <div class="slide" style="background-image:url('slide-kiln.jpg')">
+    <div class="slide-caption"><span>State of art manufacturing plant.</span></div>
+  </div>
+  <div class="slide" style="background-image:url('slide-angleboard.jpg')">
+    <div class="slide-caption"><span>Final product ready for shipping.</span></div>
+  </div>
+  <div class="slideshow-overlay"></div>
+  <div class="slideshow-dots">
+    <button class="dot active" data-slide="0" aria-label="Show slide 1"></button>
+    <button class="dot" data-slide="1" aria-label="Show slide 2"></button>
+    <button class="dot" data-slide="2" aria-label="Show slide 3"></button>
+    <button class="dot" data-slide="3" aria-label="Show slide 4"></button>
+  </div>
+</section>-->
+
+<section class="hero-slideshow" id="heroSlideshow" aria-roledescription="carousel" aria-label="Sasfino Farm highlights">
+
+  <!-- Slide 1 -->
+  <div class="slide is-active" data-index="0">
+    <div class="slide__img" style="background-image:url('images/slide-pallets.jpg');"></div>
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Sasfino Farm Limited</span>
+      <h1 class="hero-heading">Grown as timber. <em>Built</em> to carry a harvest.</h1>
+      <p class="hero-subheading">Every pallet starts as a tree on our own land and leaves our yard ready for the world, grown, treated, and engineered under one roof.</p>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" data-index="1">
+    <div class="slide__img" style="background-image:url('images/slide-manufacturing.jpg');"></div>
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Fully Accredited</span>
+      <h1 class="hero-heading">Compliance, <em>built in</em> at every stage</h1>
+      <p class="hero-subheading">KEPHIS-certified and heat-treated to a core of 56°C for 30 minutes, so every unit clears phytosanitary checks before your shipment even reaches the port.</p>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide" data-index="2">
+    <div class="slide__img" style="background-image:url('images/slide-shipping.jpg');"></div>
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Quality Wooden Pallets</span>
+      <h1 class="hero-heading">From Kiambu to <em>the world</em></h1>
+      <p class="hero-subheading">Engineered for a 1,200kg safe working load, our pallets carry Kenya's tea, coffee, flowers, and produce through Mombasa and JKIA without a second thought.</p>
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <div class="hero-arrows">
+    <button class="hero-arrow" id="prevBtn" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="hero-arrow" id="nextBtn" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <!-- Dots + counter -->
+  <div class="hero-controls">
+    <div class="hero-dots" id="heroDots"></div>
+    <div class="hero-index"><strong id="heroIndexCurrent">01</strong> / 03</div>
+  </div>
+
+</section>
+
+<section class="hero">
+  <div class="hero-illustration">
+    <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sunGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#B08968" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#B08968" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="1100" cy="180" r="220" fill="url(#sunGrad)"/>
+      <g opacity="0.5">
+        <path d="M0 620 L60 520 L120 620 Z" fill="#2B4A37"/>
+        <path d="M90 640 L150 540 L210 640 Z" fill="#2B4A37"/>
+        <path d="M180 610 L240 500 L300 610 Z" fill="#345A40"/>
+        <path d="M270 640 L330 540 L390 640 Z" fill="#2B4A37"/>
+        <path d="M360 615 L420 510 L480 615 Z" fill="#345A40"/>
+        <path d="M450 640 L510 545 L570 640 Z" fill="#2B4A37"/>
+        <path d="M540 610 L600 505 L660 610 Z" fill="#345A40"/>
+        <path d="M630 640 L690 540 L750 640 Z" fill="#2B4A37"/>
+        <path d="M720 615 L780 510 L840 615 Z" fill="#345A40"/>
+        <path d="M810 640 L870 545 L930 640 Z" fill="#2B4A37"/>
+        <path d="M900 610 L960 500 L1020 610 Z" fill="#345A40"/>
+        <path d="M990 640 L1050 540 L1110 640 Z" fill="#2B4A37"/>
+        <path d="M1080 615 L1140 510 L1200 615 Z" fill="#345A40"/>
+        <path d="M1170 640 L1230 545 L1290 640 Z" fill="#2B4A37"/>
+        <path d="M1260 615 L1320 505 L1380 615 Z" fill="#2B4A37"/>
+      </g>
+      <g opacity="0.75">
+        <path d="M-20 720 L60 590 L140 720 Z" fill="#1c3327"/>
+        <path d="M110 740 L200 600 L290 740 Z" fill="#1c3327"/>
+        <path d="M260 715 L350 580 L440 715 Z" fill="#223d2b"/>
+        <path d="M410 740 L500 600 L590 740 Z" fill="#1c3327"/>
+        <path d="M560 715 L650 585 L740 715 Z" fill="#223d2b"/>
+        <path d="M710 740 L800 600 L890 740 Z" fill="#1c3327"/>
+        <path d="M860 715 L950 580 L1040 715 Z" fill="#223d2b"/>
+        <path d="M1010 740 L1100 600 L1190 740 Z" fill="#1c3327"/>
+        <path d="M1160 715 L1250 585 L1340 715 Z" fill="#223d2b"/>
+        <path d="M1310 740 L1400 600 L1440 740 Z" fill="#1c3327"/>
+      </g>
+      <rect x="0" y="700" width="1400" height="200" fill="#14261C"/>
+      <g stroke="#0e1d15" stroke-width="1" opacity="0.6">
+        <line x1="0" y1="760" x2="1400" y2="760"/>
+        <line x1="0" y1="820" x2="1400" y2="820"/>
+      </g>
+    </svg>
+  </div>
+  <div class="wrap hero-content" style="width:100%;margin-left:5%;">
+    <span class="eyebrow">Est. 2013 &nbsp;·&nbsp; Kiambu, Kenya</span>
+    <h1 style="display:inline-block;width:99%;max-width:600px;float:left;//font-size:350%;margin-right:4%;font-size:clamp(2.0rem, 4.0vw, 4.1rem);" class="reveal is-visible">The Forest Is Where Your Supply Chain Begins</h1>
+    <div style="display:inline-block;width:99%;max-width:400px;">
+    <p class="sub reveal is-visible">We manage the timberlands, run the kiln, and build the pallet, so that one continuous line of accountability carries your shipment from a Kiambu farm to a container in Mombasa.</p>
+    <div class="hero-ctas reveal is-visible">
+      <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+      <a href="products.html" class="btn btn-outline">View Our Products</a>
+    </div>
+    </div><br>
+    <div class="stat-strip reveal is-visible">
+      <div><span class="num">2013</span><span class="label">Founded</span></div>
+      <div><span class="num">56°C</span><span class="label">HT Core Temp, 30 min</span></div>
+      <div><span class="num">1,200kg</span><span class="label">Safe Working Load</span></div>
+      <div><span class="num">ISPM 15</span><span class="label">KEPHIS Accredited</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div styled="width:100%;" class="section-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2>One roof, from standing timber to shipped freight</h2>
+      <p>Sustainable silviculture and industrial production sit under the same management here, so the timber that supplies our pallets and the pallets that carry your cargo are never more than one handshake apart.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card reveal">
+        <span class="idx">01 / Compliance</span>
+        <h3>Accreditation</h3>
+        <p>Every export-grade unit spends 30 minutes at a core temperature of at least 56°C, clearing international phytosanitary standards so your cargo isn't the thing holding up a port inspection.</p>
+      </div>
+      <div class="feature-card reveal">
+        <span class="idx">02 / Regeneration</span>
+        <h3>Active Reforestation</h3>
+        <p>Every harvested tree is followed by several new seedlings, a standing rule that keeps our forests sequestering carbon and holding the soil in place year after year.</p>
+      </div>
+      <div class="feature-card reveal">
+        <span class="idx">03 / Engineering</span>
+        <h3>Load Capacity</h3>
+        <p>Stringers and deck boards are reinforced into every heavy-duty build, so a pallet rated for 1,200kg still holds its shape after a long haul and a rough stack.</p>
+      </div>
+      <div class="feature-card reveal">
+        <span class="idx">04 / Service</span>
+        <h3>Professionalism</h3>
+        <p>We measure the job by more than the invoice. Good work here also means fair wages, safer forests, and a factory floor the people of Kiambu are proud to work on.</p>
+      </div>
+    </div>
+    <div class="reveal" style="margin-top:40px;">
+      <a href="about.html" class="btn btn-ghost">Read Our Full Story →</a>
+    </div>
+  </div>
+</section>
+
+<section class="blueprint-section" id="specs">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Engineered to spec</span>
+      <h2>No detail is left to guesswork</h2>
+      <p>Click through the specs below and watch each one light up on the pallet itself. It's the same walkthrough our technical team gives freight partners at Mombasa and JKIA.</p>
+    </div>
+    <div class="blueprint-wrap">
+      <div class="blueprint-canvas reveal">
+        <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">
+          <!-- Deck boards -->
+          <g id="deck-boards">
+            <rect x="60" y="60" width="440" height="26" fill="#B08968" stroke="#14261C" stroke-width="1"/>
+            <rect x="60" y="96" width="440" height="26" fill="#a37a5a" stroke="#14261C" stroke-width="1"/>
+            <rect x="60" y="132" width="440" height="26" fill="#B08968" stroke="#14261C" stroke-width="1"/>
+            <rect x="60" y="168" width="440" height="26" fill="#a37a5a" stroke="#14261C" stroke-width="1"/>
+            <rect x="60" y="204" width="440" height="26" fill="#B08968" stroke="#14261C" stroke-width="1"/>
+          </g>
+          <!-- Stringers -->
+          <rect id="stringer-1" class="hotspot" x="80" y="230" width="26" height="70" fill="#7C9473" stroke="#14261C" stroke-width="1"/>
+          <rect id="stringer-2" class="hotspot" x="267" y="230" width="26" height="70" fill="#7C9473" stroke="#14261C" stroke-width="1"/>
+          <rect id="stringer-3" class="hotspot" x="454" y="230" width="26" height="70" fill="#7C9473" stroke="#14261C" stroke-width="1"/>
+          <!-- Bottom boards -->
+          <rect x="60" y="300" width="440" height="14" fill="#a37a5a" stroke="#14261C" stroke-width="1"/>
+
+          <!-- HT stamp hotspot -->
+          <g id="ht-stamp" class="hotspot" transform="translate(255,95)">
+            <rect x="-30" y="-14" width="60" height="28" rx="3" fill="none" stroke="#F5F4EF" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <text x="0" y="5" text-anchor="middle" class="dim-text" font-size="10" fill="#F5F4EF">HT 56°C</text>
+          </g>
+
+          <!-- Width dimension -->
+          <line class="dim-line" x1="60" y1="335" x2="500" y2="335" marker-start="url(#arrow)" marker-end="url(#arrow)"/>
+          <line class="dim-line" x1="60" y1="325" x2="60" y2="345"/>
+          <line class="dim-line" x1="500" y1="325" x2="500" y2="345"/>
+          <text x="280" y="355" text-anchor="middle" class="dim-text">1200 MM</text>
+
+          <!-- Height dimension -->
+          <line class="dim-line" x1="520" y1="60" x2="520" y2="300"/>
+          <line class="dim-line" x1="510" y1="60" x2="530" y2="60"/>
+          <line class="dim-line" x1="510" y1="300" x2="530" y2="300"/>
+          <text x="545" y="185" text-anchor="middle" class="dim-text" transform="rotate(90 545 185)">144 MM</text>
+
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8" fill="none" stroke="#A9BF9E" stroke-width="1"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <div class="spec-panel reveal">
+        <div class="spec-item active" data-target="stringer-1 stringer-2 stringer-3">
+          <div class="spec-label">Load Capacity</div>
+          <div class="spec-value">1,200kg Safe Working Load</div>
+          <div class="spec-detail">Reinforced stringers and deck boards spread the weight evenly, so the frame holds its shape under a stacked, sustained load.</div>
+        </div>
+        <div class="spec-item" data-target="ht-stamp">
+          <div class="spec-label">Phytosanitary Treatment</div>
+          <div class="spec-value">ISPM 15 · 56°C for 30 minutes</div>
+          <div class="spec-detail">Heat treatment clears the wood of pests and satisfies the phytosanitary rules enforced at every major destination port.</div>
+        </div>
+        <div class="spec-item" data-target="deck-boards">
+          <div class="spec-label">Material</div>
+          <div class="spec-value">Eucalyptus, Cypress, Pine, Grevillia</div>
+          <div class="spec-detail">Hardwood where the load is heavy, softwood where every kilogram of chargeable air freight weight counts.</div>
+        </div>
+        <div class="spec-item" data-target="none">
+          <div class="spec-label">Standard Dimensions</div>
+          <div class="spec-value">1200×1000mm · 1200×800mm Euro</div>
+          <div class="spec-detail">The Kenyan standard fits fruit, vegetable, tea, and coffee shipments; the Euro build meets EPAL-grade spec for buyers in Europe.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sustainability">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our forests, our legacy</span>
+      <h2>We only harvest what we've already replaced</h2>
+      <p>Since 2013, a closed-loop forestry model has kept one simple rule at the center of everything we cut: production never outpaces what the land can regrow.</p>
+    </div>
+    <div class="sustain-grid">
+      <div class="sustain-item reveal">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21V11" stroke="#2B4A37" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M12 11C12 6 8 4 4 4C4 8 6 12 12 11Z" stroke="#2B4A37" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M12 15C12 11 15.5 9 19 9C19 12.5 17 15.5 12 15Z" stroke="#2B4A37" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Responsible Sourcing</h3>
+        <p>Every board starts on land managed for biodiversity and long-term ecosystem health, not stripped for a single harvest.</p>
+      </div>
+      <div class="sustain-item reveal">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12a8 8 0 0 1 14-5.3M4 12a8 8 0 0 0 14 5.3" stroke="#2B4A37" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M17 4v3h-3M7 20v-3h3" stroke="#2B4A37" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Active Reforestation</h3>
+        <p>Several seedlings go in the ground for every tree we take, keeping carbon locked in and soil where it belongs.</p>
+      </div>
+      <div class="sustain-item reveal">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="4" y="4" width="7" height="7" rx="1" stroke="#2B4A37" stroke-width="1.8"/>
+            <rect x="13" y="13" width="7" height="7" rx="1" stroke="#2B4A37" stroke-width="1.8"/>
+            <path d="M11 7.5h4a2 2 0 0 1 2 2V13M13 16.5H9a2 2 0 0 1-2-2V11" stroke="#2B4A37" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Circular Economy</h3>
+        <p>A damaged pallet gets repaired before it gets replaced, and whatever wood is left over becomes mulch or biofuel, not landfill.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products" style="background:var(--slate-light);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our products</span>
+      <h2>Choose the build your freight actually needs</h2>
+      <p>Standard export pallets, angle board corners, pallet tops, or a fully custom footprint — open the interactive products page to configure the spec against your shipment.</p>
+    </div>
+    <div class="product-teaser-grid reveal">
+      <a href="products.html#pallets" class="product-teaser-card">
+        <div class="ptc-visual">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#14261C"/>
+            <g transform="translate(40,90)">
+              <rect x="0" y="0" width="320" height="18" fill="#B08968"/>
+              <rect x="0" y="26" width="320" height="18" fill="#a37a5a"/>
+              <rect x="0" y="52" width="320" height="18" fill="#B08968"/>
+              <rect x="0" y="78" width="320" height="18" fill="#a37a5a"/>
+              <rect x="20" y="96" width="18" height="50" fill="#7C9473"/>
+              <rect x="151" y="96" width="18" height="50" fill="#7C9473"/>
+              <rect x="282" y="96" width="18" height="50" fill="#7C9473"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Export-Grade Pallets</h3>
+        <p>Kenyan standard and EPAL-grade Euro builds, rated to a 1,200kg safe working load.</p>
+        <span class="ptc-link">Explore spec →</span>
+      </a>
+      <a href="products.html#angle" class="product-teaser-card">
+        <div class="ptc-visual">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#14261C"/>
+            <g transform="translate(150,50) rotate(8)">
+              <rect x="0" y="0" width="14" height="200" fill="#B08968"/>
+              <rect x="0" y="0" width="40" height="14" fill="#a37a5a"/>
+            </g>
+            <g transform="translate(200,50) rotate(8)">
+              <rect x="0" y="0" width="14" height="200" fill="#B08968"/>
+              <rect x="0" y="0" width="40" height="14" fill="#a37a5a"/>
+            </g>
+          </svg>
+        </div>
+        <h3>Angle Board Corners</h3>
+        <p>Corner and edge protection cut to length for either sea or air freight.</p>
+        <span class="ptc-link">Explore spec →</span>
+      </a>
+      <a href="products.html#custom" class="product-teaser-card">
+        <div class="ptc-visual">
+          <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#14261C"/>
+            <rect x="60" y="70" width="120" height="90" fill="none" stroke="#A9BF9E" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <rect x="220" y="100" width="150" height="60" fill="none" stroke="#A9BF9E" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <text x="120" y="185" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A9BF9E">? × ?</text>
+            <text x="295" y="175" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A9BF9E">? × ?</text>
+          </svg>
+        </div>
+        <h3>Custom Dimensions</h3>
+        <p>When your cargo doesn't fit a standard footprint, we build to the one it needs.</p>
+        <span class="ptc-link">Explore spec →</span>
+      </a>
+    </div>
+    <div class="reveal" style="margin-top:40px;">
+      <a href="products.html" class="btn btn-ghost">Open the Interactive Products Page →</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h5>Sasfino Farm Limited</h5>
+        <p style="max-width:32ch; color:rgba(245,244,239,0.72);">Agroforestry and wood products working as one supply chain, so the trees we grow are the same ones that carry your harvest to the world.</p>
+        <div class="cert-badges">
+          <span class="cert-badge">✓ ISPM 15</span>
+          <span class="cert-badge">✓ KEPHIS Accredited</span>
+        </div>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p>P.O. Box 40820 – 00100, Nairobi</p>
+        <p>1st Floor, RidgeView Place, Ridgeways</p>
+        <a href="tel:+254788887180">0788 887 180</a>
+        <a href="mailto:info@sasfino.com">info@sasfino.com</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="manufacturing.html">Manufacturing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h5>Factory & Office</h5>
+        <p><b>Farm:</b> Githunguri, Ikinu, KIambu County</p>
+        <p><b>Factory:</b> Kiamumbi, off Kamiti Road</p>
+        <p><b>Office:</b> Ridgeways, Nairobi</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sasfino Farm Limited</span>
+      <span class="mono"> </span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

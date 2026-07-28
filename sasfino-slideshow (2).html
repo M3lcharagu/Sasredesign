@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sasfino Farm — Hero Slideshow</title>
+
+<!-- Fonts: Fraunces (warm, editorial serif) for headings + Inter for subheadings/labels -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --pine-950:#10231b;
+    --pine-900:#163024;
+    --amber-400:#c88a3d;
+    --amber-300:#e0aa63;
+    --cream-100:#f6f1e6;
+    --cream-200:#ece4d3;
+    --line:rgba(246,241,230,0.28);
+  }
+
+  *{ box-sizing:border-box; }
+
+  .hero-slideshow{
+    position:relative;
+    width:100%;
+    height:88vh;
+    min-height:560px;
+    max-height:880px;
+    overflow:hidden;
+    background:var(--pine-950);
+    font-family:'Inter', sans-serif;
+  }
+
+  /* ---- Slides ---- */
+  .slide{
+    position:absolute;
+    inset:0;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 1.4s ease;
+    background-size:cover;
+    background-position:center;
+  }
+  .slide.is-active{
+    opacity:1;
+    visibility:visible;
+    z-index:1;
+  }
+  /* slow ambient zoom on the active slide's image layer */
+  .slide__img{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    transform:scale(1.04);
+    transition:transform 8s ease-out;
+  }
+  .slide.is-active .slide__img{
+    transform:scale(1.14);
+  }
+
+  /* Gradient scrim for legible text — heavier at bottom-left where copy sits */
+  .slide::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(180deg, rgba(16,35,27,0.15) 0%, rgba(16,35,27,0.20) 45%, rgba(16,35,27,0.72) 100%),
+      linear-gradient(90deg, rgba(16,35,27,0.55) 0%, rgba(16,35,27,0.05) 55%);
+    z-index:1;
+  }
+
+  /* ---- Copy block ---- */
+  .hero-copy{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    z-index:2;
+    padding: clamp(28px, 6vw, 88px) clamp(20px, 6vw, 88px);
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    max-width:920px;
+  }
+
+  .hero-eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    align-self:flex-start;
+    font-family:'Inter', sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--amber-300);
+    opacity:0;
+    transform:translateY(14px);
+  }
+  .hero-eyebrow::before{
+    content:"";
+    width:26px;
+    height:1px;
+    background:var(--amber-300);
+  }
+
+  .hero-heading{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-optical-sizing:auto;
+    font-style:normal;
+    font-size:clamp(2.6rem, 5.6vw, 5.1rem);
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    color:var(--cream-100);
+    margin:0;
+    opacity:0;
+    transform:translateY(22px);
+    text-wrap:balance;
+  }
+  .hero-heading em{
+    font-style:italic;
+    color:var(--amber-300);
+  }
+
+  .hero-subheading{
+    font-family:'Inter', sans-serif;
+    font-weight:400;
+    font-size:clamp(1.05rem, 1.6vw, 1.35rem);
+    line-height:1.55;
+    color:var(--cream-200);
+    max-width:640px;
+    margin:0;
+    opacity:0;
+    transform:translateY(18px);
+  }
+
+  /* Staggered entrance, replays each time a slide activates */
+  .slide.is-active .hero-eyebrow{ animation:riseIn .8s .25s cubic-bezier(.19,1,.22,1) forwards; }
+  .slide.is-active .hero-heading{ animation:riseIn .9s .40s cubic-bezier(.19,1,.22,1) forwards; }
+  .slide.is-active .hero-subheading{ animation:riseIn .9s .58s cubic-bezier(.19,1,.22,1) forwards; }
+
+  @keyframes riseIn{
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  /* ---- Controls: dots ---- */
+  .hero-controls{
+    position:absolute;
+    right:clamp(20px, 6vw, 88px);
+    bottom:clamp(28px, 6vw, 88px);
+    z-index:3;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  .hero-dots{
+    display:flex;
+    gap:10px;
+  }
+  .hero-dot{
+    width:34px;
+    height:3px;
+    background:rgba(246,241,230,0.35);
+    border:none;
+    cursor:pointer;
+    padding:0;
+    position:relative;
+    overflow:hidden;
+    border-radius:2px;
+  }
+  .hero-dot::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:var(--amber-300);
+    transform:scaleX(0);
+    transform-origin:left;
+  }
+  .hero-dot.is-active::after{
+    animation:fillDot linear forwards;
+    animation-duration:var(--slide-duration, 6s);
+  }
+  @keyframes fillDot{
+    from{ transform:scaleX(0); }
+    to{ transform:scaleX(1); }
+  }
+
+  /* ---- Controls: arrows ---- */
+  .hero-arrows{
+    position:absolute;
+    z-index:3;
+    top:50%;
+    left:0; right:0;
+    display:flex;
+    justify-content:space-between;
+    padding:0 clamp(10px, 2.5vw, 32px);
+    transform:translateY(-50%);
+    pointer-events:none;
+  }
+  .hero-arrow{
+    pointer-events:auto;
+    width:48px; height:48px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:rgba(16,35,27,0.35);
+    backdrop-filter:blur(6px);
+    color:var(--cream-100);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:background .25s ease, border-color .25s ease, transform .25s ease;
+  }
+  .hero-arrow:hover{
+    background:rgba(200,138,61,0.9);
+    border-color:var(--amber-400);
+    transform:scale(1.06);
+  }
+  .hero-arrow svg{ width:18px; height:18px; }
+
+  /* ---- Slide index label ---- */
+  .hero-index{
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    letter-spacing:.08em;
+    color:var(--cream-200);
+    min-width:46px;
+    text-align:right;
+  }
+  .hero-index strong{ color:var(--cream-100); font-weight:600; }
+
+  @media (max-width:640px){
+    .hero-arrows{ display:none; }
+    .hero-copy{ max-width:100%; }
+    .hero-controls{ right:20px; bottom:20px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .slide, .slide__img, .hero-eyebrow, .hero-heading, .hero-subheading, .hero-dot::after{
+      animation:none !important;
+      transition:opacity .4s ease !important;
+      transform:none !important;
+    }
+  }
+</style>
+</head>
+<body style="margin:0;">
+
+<section class="hero-slideshow" id="heroSlideshow" aria-roledescription="carousel" aria-label="Sasfino Farm highlights">
+
+  <!-- Slide 1 -->
+  <div class="slide is-active" data-index="0">
+    <div class="slide__img" style="background-image:url('images/slide-pallets.jpg');"></div>
+    <div class="hero-copy">
+      <span class="hero-eyebrow">Est. 2013 · Kiambu, Kenya</span>
+      <h1 class="hero-heading">We produce the <em>best</em> pallets</h1>
+      <p class="hero-subheading">Every pallet is made from homegrown trees — grown, treated, and engineered under one roof.</p>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" data-index="1">
+    <div class="slide__img" style="background-image:url('images/slide-manufacturing.jpg');"></div>
+    <div class="hero-copy">
+      <span class="hero-eyebrow">ISPM 15 · KEPHIS Accredited</span>
+      <h1 class="hero-heading">State-of-the-art <em>manufacturing</em></h1>
+      <p class="hero-subheading">Heat-treated to 56°C for 30 minutes, meeting international phytosanitary standards at every stage of production.</p>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide" data-index="2">
+    <div class="slide__img" style="background-image:url('images/slide-shipping.jpg');"></div>
+    <div class="hero-copy">
+      <span class="hero-eyebrow">1,200kg Safe Working Load</span>
+      <h1 class="hero-heading">Ready for the <em>journey</em> ahead</h1>
+      <p class="hero-subheading">From Kiambu to Mombasa and JKIA — every shipment leaves engineered to carry Kenya's harvest safely to global markets.</p>
+    </div>
+  </div>
+
+  <!-- Arrows -->
+  <div class="hero-arrows">
+    <button class="hero-arrow" id="prevBtn" aria-label="Previous slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="hero-arrow" id="nextBtn" aria-label="Next slide">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <!-- Dots + counter -->
+  <div class="hero-controls">
+    <div class="hero-dots" id="heroDots"></div>
+    <div class="hero-index"><strong id="heroIndexCurrent">01</strong> / 03</div>
+  </div>
+
+</section>
+
+<script>
+(function(){
+  const root        = document.getElementById('heroSlideshow');
+  const slides       = Array.from(root.querySelectorAll('.slide'));
+  const dotsWrap      = document.getElementById('heroDots');
+  const prevBtn        = document.getElementById('prevBtn');
+  const nextBtn        = document.getElementById('nextBtn');
+  const indexLabel     = document.getElementById('heroIndexCurrent');
+  const SLIDE_DURATION = 6000; // ms each slide is shown
+
+  root.style.setProperty('--slide-duration', (SLIDE_DURATION / 1000) + 's');
+
+  let current = 0;
+  let timer = null;
+
+  // Build dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'hero-dot' + (i === 0 ? ' is-active' : '');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i, true));
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function render(){
+    slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
+    dots.forEach((d, i) => d.classList.toggle('is-active', i === current));
+    indexLabel.textContent = String(current + 1).padStart(2, '0');
+  }
+
+  function goTo(i, userInitiated){
+    current = (i + slides.length) % slides.length;
+    render();
+    if (userInitiated) restartTimer();
+  }
+
+  function next(){ goTo(current + 1); }
+  function prev(){ goTo(current - 1); }
+
+  function restartTimer(){
+    clearInterval(timer);
+    timer = setInterval(next, SLIDE_DURATION);
+  }
+
+  nextBtn.addEventListener('click', () => goTo(current + 1, true));
+  prevBtn.addEventListener('click', () => goTo(current - 1, true));
+
+  // Pause on hover / focus, resume on leave
+  root.addEventListener('mouseenter', () => clearInterval(timer));
+  root.addEventListener('mouseleave', restartTimer);
+  root.addEventListener('focusin', () => clearInterval(timer));
+  root.addEventListener('focusout', restartTimer);
+
+  // Keyboard navigation
+  root.setAttribute('tabindex', '0');
+  root.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') goTo(current + 1, true);
+    if (e.key === 'ArrowLeft') goTo(current - 1, true);
+  });
+
+  render();
+  restartTimer();
+})();
+</script>
+
+</body>
+</html>

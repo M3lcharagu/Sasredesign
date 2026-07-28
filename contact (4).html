@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="Sasfino_Fav.png" />
+<title>Contact — Sasfino Farm Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="logo">
+      <img src="sasfino_logo.png" alt="Sasfino Farm Limited" class="logo-img">
+    </div>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="manufacturing.html">Manufacturing</a>
+      <a href="sustainability.html">Sustainability</a> 
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary">Request Quote</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+</header>
+
+<section class="page-banner">
+  <div class="banner-photo" style="background-image:url('slide-pallets.jpg')"></div>
+  <div class="banner-overlay"></div>
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
+    <h1 class="reveal is-visible">Contact Us</h1>
+    <p class="sub reveal is-visible">Tell us about your cargo, freight type, and timeline. Our team will get back to you with dimensions, lead time, and compliance details for your specific shipment.</p>
+  </div>
+</section>
+
+<section id="contact-main">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <div class="contact-form-card reveal" id="contact-form-card">
+        <form id="quote-form" novalidate>
+          <div class="form-row">
+            <div class="form-field" id="field-name">
+              <label for="f-name">Full name <span class="req">*</span></label>
+              <input type="text" id="f-name" name="name" autocomplete="name" required>
+              <div class="form-error-msg">Please enter your name.</div>
+            </div>
+            <div class="form-field" id="field-company">
+              <label for="f-company">Company / Organisation</label>
+              <input type="text" id="f-company" name="company" autocomplete="organization">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field" id="field-email">
+              <label for="f-email">Email address <span class="req">*</span></label>
+              <input type="email" id="f-email" name="email" autocomplete="email" required>
+              <div class="form-error-msg">Please enter a valid email address.</div>
+            </div>
+            <div class="form-field" id="field-phone">
+              <label for="f-phone">Phone number</label>
+              <input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="+254 7...">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field" id="field-product">
+              <label for="f-product">Product of interest</label>
+              <select id="f-product" name="product">
+                <option value="">Not sure yet</option>
+                <option value="pallets">Export-Grade Pallets</option>
+                <option value="angle">Angle Board Corners</option>
+                <option value="tops">Pallet Tops</option>
+                <option value="custom">Custom Dimensions</option>
+              </select>
+            </div>
+            <div class="form-field" id="field-quantity">
+              <label for="f-quantity">Estimated quantity</label>
+              <input type="number" min="0" id="f-quantity" name="quantity" placeholder="e.g. 200 units">
+            </div>
+          </div>
+          <div class="form-field" id="field-message">
+            <label for="f-message">Message <span class="req">*</span></label>
+            <textarea id="f-message" name="message" required placeholder="Tell us about your cargo, freight type (sea/air), destination, and timeline..."></textarea>
+            <div class="form-error-msg">Please add a short message so we know how to help.</div>
+          </div>
+          <div class="form-submit-row">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <span class="form-note">We typically reply within 1 business day.</span>
+          </div>
+        </form>
+
+        <div class="contact-success" id="contact-success">
+          <div class="cs-icon">✓</div>
+          <h3>Message received, thank you.</h3>
+          <p>A member of our team will get back to you within one business day. For anything urgent, call us directly at <strong>0788 887 180</strong>.</p>
+          <button type="button" class="btn btn-ghost" id="send-another">Send Another Message</button>
+        </div>
+      </div>
+
+      <div class="contact-info-stack reveal">
+        <div class="info-card">
+          <h4>Head Office</h4>
+          <p>P.O. Box 40820 – 00100, Nairobi</p>
+          <p>1st Floor, RidgeView Place, Ridgeways</p>
+          <a href="tel:+254788887180">0788 887 180</a>
+          <a href="mailto:info@sasfino.com">info@sasfino.com</a>
+        </div>
+        <div class="info-card light">
+          <h4>Factory & Farms</h4>
+          <p><b>Factory:</b> Kiamumbi, off Kamiti Road</p>
+          <p><b>Farm:</b> Githunguri / Ikinu / 883</p>
+        </div>
+        <div class="info-card light">
+          <h4>Business Hours</h4>
+          <div class="hours-row"><span>Monday – Friday</span><span>8:00 – 17:00</span></div>
+          <div class="hours-row"><span>Saturday</span><span>8:00 – 13:00</span></div>
+          <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-light);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Find us</span>
+      <p>Our head office sits in Ridgeways, with production based at our Kiamumbi factory off Kamiti Road.</p>
+    </div>
+    <div class="map-card reveal">
+      <iframe
+        src="https://www.google.com/maps?q=RidgeView+Place,+Ridgeways+Mall,+Nairobi,+Kenya&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Map showing Sasfino Farm Limited's Ridgeways office in Nairobi">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<footer id="contact-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h5>Sasfino Farm Limited</h5>
+        <p style="max-width:32ch; color:rgba(245,244,239,0.72);">We connect local farms to global markets through agroforestry and high-quality wood products, growing the trees that carry your harvest to the world.</p>
+        <div class="cert-badges">
+          <span class="cert-badge">✓ ISPM 15</span>
+          <span class="cert-badge">✓ KEPHIS Accredited</span>
+        </div>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p>P.O. Box 40820 – 00100, Nairobi</p>
+        <p>1st Floor, RidgeView Place, Ridgeways</p>
+        <a href="tel:+254788887180">0788 887 180</a>
+        <a href="mailto:info@sasfino.com">info@sasfino.com</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="manufacturing.html">Manufacturing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h5>Factory & Office</h5>
+        <p><b>Farm:</b> Githunguri, Ikinu, KIambu County</p>
+        <p><b>Factory:</b> Kiamumbi, off Kamiti Road</p>
+        <p><b>Office:</b> Ridgeways, Nairobi</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sasfino Farm Limited</span>
+      <span class="mono"> </span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="contact.js"></script>
+
+</body>
+</html>

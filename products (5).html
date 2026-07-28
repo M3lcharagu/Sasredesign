@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="Sasfino_Fav.png" />
+<title>Products — Sasfino Farm Limited</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="logo">
+      <img src="sasfino_logo.png" alt="Sasfino Farm Limited" class="logo-img">
+    </div>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="products.html">Products</a>
+      <a href="manufacturing.html">Manufacturing</a>
+      <a href="sustainability.html">Sustainability</a> 
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary">Request Quote</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+</header>
+
+<section class="page-banner">
+  <div class="banner-photo" style="background-image:url('slide-kiln.jpg')"></div>
+  <div class="banner-overlay"></div>
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Products</div>
+    <h1 class="reveal is-visible">Our Products</h1>
+    <p class="sub reveal is-visible">Export-grade pallets, angle board corners, pallet tops, and fully custom builds — every unit heat-treated to ISPM 15 and finished to the same load-bearing standard. Explore the specs, compare products, or configure a recommendation for your shipment below.</p>
+  </div>
+</section>
+
+<section id="pallets">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our range</span>
+      <h2>Four products, one standard</h2>
+      <p>Switch between tabs to see how each product is built, sized, and treated — the same detail our technical team walks freight partners through at Mombasa and JKIA.</p>
+    </div>
+    <div class="product-tabs reveal">
+      <button class="tab-btn active" data-tab="pallets">Export-Grade Pallets</button>
+      <button class="tab-btn" data-tab="angle">Angle Board Corners</button>
+      <button class="tab-btn" data-tab="tops">Pallet Tops</button>
+      <button class="tab-btn" data-tab="custom">Custom Dimensions</button>
+    </div>
+
+    <div class="product-panel active" data-panel="pallets">
+      <div class="product-visual">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#14261C"/>
+          <g transform="translate(40,90)">
+            <rect x="0" y="0" width="320" height="18" fill="#B08968"/>
+            <rect x="0" y="26" width="320" height="18" fill="#a37a5a"/>
+            <rect x="0" y="52" width="320" height="18" fill="#B08968"/>
+            <rect x="0" y="78" width="320" height="18" fill="#a37a5a"/>
+            <rect x="20" y="96" width="18" height="50" fill="#7C9473"/>
+            <rect x="151" y="96" width="18" height="50" fill="#7C9473"/>
+            <rect x="282" y="96" width="18" height="50" fill="#7C9473"/>
+          </g>
+        </svg>
+      </div>
+      <div class="product-copy">
+        <h3>Export-Grade Pallets</h3>
+        <p>Our core product: heat-treated, ISPM 15 compliant pallets built for the realities of sea and air freight, from the Kenyan standard to EPAL-grade Euro pallets.</p>
+        <ul class="spec-list">
+          <li><span>Kenyan Standard</span><span>1200 × 1000mm</span></li>
+          <li><span>Euro Pallet (EPAL-grade)</span><span>1200 × 800mm</span></li>
+          <li><span>Safe Working Load</span><span>Up to 1,200kg</span></li>
+          <li><span>Materials</span><span>Eucalyptus / Cypress / Pine</span></li>
+          <li><span>Treatment</span><span>ISPM 15 · 56°C / 30 min core</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-panel" data-panel="angle">
+      <div class="product-visual">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#14261C"/>
+          <g transform="translate(150,50) rotate(8)">
+            <rect x="0" y="0" width="14" height="200" fill="#B08968"/>
+            <rect x="0" y="0" width="40" height="14" fill="#a37a5a"/>
+          </g>
+          <g transform="translate(200,50) rotate(8)">
+            <rect x="0" y="0" width="14" height="200" fill="#B08968"/>
+            <rect x="0" y="0" width="40" height="14" fill="#a37a5a"/>
+          </g>
+        </svg>
+      </div>
+      <div class="product-copy">
+        <h3>Angle Board Corners</h3>
+        <p>Reinforcement strips that protect pallet edges and cargo corners during transit, sized specifically for sea versus air freight.</p>
+        <ul class="spec-list">
+          <li><span>Sea freight length</span><span>2400mm</span></li>
+          <li><span>Air freight length</span><span>1600mm / 1000mm</span></li>
+          <li><span>Function</span><span>Edge & corner reinforcement</span></li>
+          <li><span>Materials</span><span>Eucalyptus / Pine</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-panel" data-panel="tops">
+      <div class="product-visual">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#14261C"/>
+          <g transform="translate(40,120)">
+            <rect x="0" y="0" width="320" height="16" fill="#B08968"/>
+            <rect x="0" y="24" width="320" height="16" fill="#a37a5a"/>
+            <rect x="0" y="48" width="320" height="16" fill="#B08968"/>
+          </g>
+          <g transform="translate(40,80)" opacity="0.5">
+            <rect x="0" y="0" width="320" height="16" fill="#7C9473"/>
+          </g>
+        </svg>
+      </div>
+      <div class="product-copy">
+        <h3>Pallet Tops</h3>
+        <p>Flat, heat-treated deck caps used to close off the top of a stacked or palletized load for sea freight, keeping cargo compressed and protected under load-securing straps.</p>
+        <ul class="spec-list">
+          <li><span>Kenyan Standard top</span><span>1200 × 1000mm</span></li>
+          <li><span>Euro top (EPAL-grade)</span><span>1200 × 800mm</span></li>
+          <li><span>Typical use</span><span>Sea freight, stacked loads</span></li>
+          <li><span>Treatment</span><span>ISPM 15 on request</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="product-panel" data-panel="custom">
+      <div class="product-visual">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="400" height="300" fill="#14261C"/>
+          <rect x="60" y="70" width="120" height="90" fill="none" stroke="#A9BF9E" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <rect x="220" y="100" width="150" height="60" fill="none" stroke="#A9BF9E" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <text x="120" y="185" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A9BF9E">? × ?</text>
+          <text x="295" y="175" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#A9BF9E">? × ?</text>
+        </svg>
+      </div>
+      <div class="product-copy">
+        <h3>Custom Dimensions</h3>
+        <p>Where a client's cargo doesn't fit a standard footprint, our production team builds to the exact dimensions the shipment requires.</p>
+        <ul class="spec-list">
+          <li><span>Sizing</span><span>Client-specified</span></li>
+          <li><span>Treatment</span><span>ISPM 15 on request</span></li>
+          <li><span>Lead time</span><span>Discussed at quoting</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--slate-light);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Side by side</span>
+      <h2>Compare the range at a glance</h2>
+      <p>Click any row to jump straight to that product's full spec above.</p>
+    </div>
+    <div class="compare-table-wrap reveal">
+      <table class="compare-table" id="compare-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Dimensions</th>
+            <th>Materials</th>
+            <th>Treatment</th>
+            <th>Best for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-tab-target="pallets" class="row-active">
+            <td>Export-Grade Pallets</td>
+            <td class="mono-cell">1200×1000mm / 1200×800mm</td>
+            <td class="mono-cell">Eucalyptus, Cypress, Pine</td>
+            <td class="mono-cell">ISPM 15 · 56°C/30min</td>
+            <td>Sea & air freight base units</td>
+          </tr>
+          <tr data-tab-target="angle">
+            <td>Angle Board Corners</td>
+            <td class="mono-cell">2400mm / 1600mm / 1000mm</td>
+            <td class="mono-cell">Eucalyptus, Pine</td>
+            <td class="mono-cell">As required</td>
+            <td>Corner & edge reinforcement</td>
+          </tr>
+          <tr data-tab-target="tops">
+            <td>Pallet Tops</td>
+            <td class="mono-cell">1200×1000mm / 1200×800mm</td>
+            <td class="mono-cell">Eucalyptus, Pine</td>
+            <td class="mono-cell">ISPM 15 on request</td>
+            <td>Stacked sea freight loads</td>
+          </tr>
+          <tr data-tab-target="custom">
+            <td>Custom Dimensions</td>
+            <td class="mono-cell">Client-specified</td>
+            <td class="mono-cell">Client-specified</td>
+            <td class="mono-cell">ISPM 15 on request</td>
+            <td>Non-standard cargo footprints</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="compare-hint">Table rows sync with the product tabs above — try clicking one.</p>
+  </div>
+</section>
+
+<section class="blueprint-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Not sure which spec you need?</span>
+      <h2>Configure a recommendation for your shipment</h2>
+      <p>Answer three quick questions and we'll point you to the right product and spec — no quote or pricing involved, just a starting point for your conversation with our team.</p>
+    </div>
+    <div class="configurator reveal">
+      <div class="configurator-form">
+        <div class="cf-group">
+          <span class="cf-label">01 · Freight type</span>
+          <div class="cf-toggle-row" id="cf-freight">
+            <button type="button" class="cf-toggle active" data-value="sea">Sea Freight</button>
+            <button type="button" class="cf-toggle" data-value="air">Air Freight</button>
+          </div>
+        </div>
+        <div class="cf-group">
+          <span class="cf-label">02 · Approximate cargo weight per pallet (kg)</span>
+          <input type="number" min="0" step="10" class="cf-input" id="cf-weight" placeholder="e.g. 850">
+        </div>
+        <div class="cf-group">
+          <span class="cf-label">03 · Does your cargo need a custom footprint?</span>
+          <div class="cf-toggle-row" id="cf-custom">
+            <button type="button" class="cf-toggle active" data-value="no">Standard size is fine</button>
+            <button type="button" class="cf-toggle" data-value="yes">Yes, non-standard</button>
+          </div>
+        </div>
+      </div>
+      <div class="configurator-result" id="cf-result">
+        <div class="cr-eyebrow">Recommended for you</div>
+        <div class="cr-product" id="cr-product-name">Export-Grade Pallet · Kenyan Standard</div>
+        <div class="cr-specs" id="cr-specs">
+          <div><span>Dimensions</span><span>1200 × 1000mm</span></div>
+          <div><span>Safe Working Load</span><span>Up to 1,200kg</span></div>
+          <div><span>Angle board length</span><span>2400mm (sea)</span></div>
+          <div><span>Suggested material</span><span>Eucalyptus / Cypress</span></div>
+        </div>
+        <div id="cr-warning"></div>
+        <p class="cr-note" id="cr-note">The Kenyan standard footprint suits most tea, coffee, and horticultural export loads moving through Mombasa. Pair it with sea-freight-length angle board corners and a pallet top if the load will be stacked.</p>
+        <a href="contact.html" class="btn btn-outline">Discuss This Spec With Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">From the factory floor</span>
+      <h2>Production, in photos</h2>
+      <p>A look at heat treatment, angle board production, and hand-finishing at our Kiamumbi facility. Click any photo to view it larger.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" data-caption="Heat treatment kiln, 56°C core temperature">
+        <img src="slide-kiln.jpg" alt="Heat treatment kiln at Sasfino's Kiamumbi facility">
+        <span class="gi-label">Heat Treatment Kiln</span>
+      </div>
+      <div class="gallery-item" data-caption="Angle board corner production line">
+        <img src="slide-angleboard.jpg" alt="Angle board corner production">
+        <span class="gi-label">Angle Board Production</span>
+      </div>
+      <div class="gallery-item" data-caption="Hand-finished timber craftsmanship">
+        <img src="craftsmanship.jpg" alt="Craftsman finishing a timber board by hand">
+        <span class="gi-label">Craftsmanship</span>
+      </div>
+      <div class="gallery-item" data-caption="Finished export-grade pallets, ready for dispatch">
+        <img src="slide-pallets.jpg" alt="Finished export-grade pallets ready for dispatch">
+        <span class="gi-label">Ready for Dispatch</span>
+      </div>
+    </div>
+  </div>
+</section>-->
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="cta-banner reveal">
+      <div>
+        <h3>Ready to build your export shipment on a stronger foundation?</h3>
+        <p>Talk to our team about pallet dimensions, lead times, and ISPM 15 compliance for your next shipment.</p>
+      </div>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+        <a href="about.html" class="btn btn-ghost">Read Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h5>Sasfino Farm Limited</h5>
+        <p style="max-width:32ch; color:rgba(245,244,239,0.72);">We connect local farms to global markets through agroforestry and high-quality wood products, growing the trees that carry your harvest to the world.</p>
+        <div class="cert-badges">
+          <span class="cert-badge">✓ ISPM 15</span>
+          <span class="cert-badge">✓ KEPHIS Accredited</span>
+        </div>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p>P.O. Box 40820 – 00100, Nairobi</p>
+        <p>1st Floor, RidgeView Place, Ridgeways</p>
+        <a href="tel:+254788887180">0788 887 180</a>
+        <a href="mailto:info@sasfino.com">info@sasfino.com</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="manufacturing.html">Manufacturing</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h5>Factory & Office</h5>
+        <p><b>Farm:</b> Githunguri, Ikinu, KIambu County</p>
+        <p><b>Factory:</b> Kiamumbi, off Kamiti Road</p>
+        <p><b>Office:</b> Ridgeways, Nairobi</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Sasfino Farm Limited</span>
+      <span class="mono"> </span>
+    </div>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <img src="" alt="" id="lightbox-img">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<script src="script.js"></script>
+<script src="products.js"></script>
+
+</body>
+</html>
